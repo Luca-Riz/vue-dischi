@@ -1,9 +1,13 @@
 <template>
     <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5">
         <div v-for="(album,index) in albumList" 
-            :key="index" class="headband col px-4 my-2">
-            <img :src="album.poster" alt="#">
-            {{ album.title }}
+            :key="index" class="col px-4 my-2">
+            <div class="headband">
+                <img class="py-4" :src="album.poster" alt="#">
+                <h3 class="title pb-4 text-uppercase text-center"> {{ album.title }} </h3>
+                <div class="author text-center"> {{ album.author }} </div>
+                <div class="year text-center"> {{ album.year }} </div>
+            </div>
         </div>          
     </div>
 </template>
@@ -37,5 +41,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    
+    .headband{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #2e3a46;
+        color: white;
+        height: 100%;
+
+        &:last-child {
+            margin-bottom: 3rem;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        .author, .year {
+            color: grey
+        }
+    }
 
 </style>
