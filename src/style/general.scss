@@ -1,7 +1,7 @@
 //@import "~bootstrao/scss/bootstrap";  si può inserire anche così
 @import 'bootstrap';
-@import "~@fontsource/roboto/index.css";
-//@import "~fontsource/roboto/500.css"; se volessi font-weight: 500 standard 400
+@import "~@fontsource/pt-sans/index.css";
+
 
 *{
     margin: 0;
@@ -10,6 +10,6 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "PT Sans";
     background-color: #1e2d3b;
 }
