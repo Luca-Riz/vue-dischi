@@ -2,8 +2,8 @@
     <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5">
         <div v-for="(album,index) in albumList" 
             :key="index" class="headband col px-4 my-2">
-            <img src=album.poster alt="logo spotify">
-            {{album.title}}
+            <img :src="album.poster" alt="#">
+            {{ album.title }}
         </div>          
     </div>
 </template>
@@ -27,10 +27,10 @@ export default {
             axios
                 .get(this.apiURL)
                 .then(res => {
-                    // console.log(res.data);
-                    this.albumList = res.data;
-                    console.log(this.albumList);
-                    }),
+                    // console.log(res.data.response);
+                    this.albumList = res.data.response;
+                    console.log(this.albumList.response);
+                    })
         }
     }
 }
