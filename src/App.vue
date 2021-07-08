@@ -4,10 +4,7 @@
 
     <div class="container">
       <Album />
-
     </div>
-
-
 
   </div>
 </template>
