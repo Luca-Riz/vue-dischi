@@ -1,12 +1,12 @@
 <template>
-    <div class="headband mb-5">
+    <div class="headband">
         <img src="../assets/logo-spotify.png" alt="logo spotify">
     </div>  
 </template>
 
 <script>
 export default {
-    name: 'Header', //non indispensabile ma best practice
+    name: 'Album', //non indispensabile ma best practice
     
 }
 </script>
