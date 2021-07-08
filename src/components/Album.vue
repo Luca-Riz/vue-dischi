@@ -5,8 +5,8 @@
             <div class="headband">
                 <img class="py-4" :src="album.poster" alt="#">
                 <h3 class="title pb-4 text-uppercase text-center"> {{ album.title }} </h3>
-                <div class="author text-center"> {{ album.author }} </div>
-                <div class="year text-center"> {{ album.year }} </div>
+                <div class="author"> {{ album.author }} </div>
+                <div class="year pb-3"> {{ album.year }} </div>
             </div>
         </div>          
     </div>
@@ -50,9 +50,6 @@ export default {
         color: white;
         height: 100%;
 
-        &:last-child {
-            margin-bottom: 3rem;
-        }
 
         img {
             width: 80%;
