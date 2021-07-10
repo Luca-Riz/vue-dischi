@@ -2,9 +2,7 @@
   <div id="app">
     <Header :arrayGenres="arrayGenres" @getGenre="displayGenre" />
 
-    <div class="container">
-      <Album :arrayAlbum="albumList" />
-    </div>
+    <Main :arrayAlbum="albumList" />
 
   </div>
 </template>
@@ -12,13 +10,14 @@
 <script>
 import axios from 'axios';
 import Header from '@/components/Header.vue';
-import Album from '@/components/Album.vue';
+import Main from '@/components/Main.vue';
 export default {
   name: 'App',
   components: {
     Header,
-    Album
+    Main
   },
+
   data() {
       return {
           apiURL : 'https://flynn.boolean.careers/exercises/api/array/music',
@@ -28,9 +27,11 @@ export default {
 
       }
   },
+
   created(){
       this.getAlbums();
   },
+  
   methods: {
       getAlbums(){
           axios
@@ -60,6 +61,7 @@ export default {
             .then(res => {              
               let risposta = res.data.response;
               risposta.sort(function(a, b) {
+                    //.sort in ordine di anno
                     return a.year - b.year
                   });
               // console.log(risposta, genreSel);

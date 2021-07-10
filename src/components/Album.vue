@@ -49,7 +49,6 @@ export default {
         color: white;
         height: 100%;
 
-
         img {
             width: 80%;
         }
