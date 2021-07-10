@@ -31,7 +31,7 @@ export default {
   created(){
       this.getAlbums();
   },
-  
+
   methods: {
       getAlbums(){
           axios
@@ -51,8 +51,7 @@ export default {
                         this.arrayGenres.push(element.genre);
                       }                      
                   });
-
-                  })
+              })
       },
       displayGenre(genreSel){
         // console.log(genreSel);

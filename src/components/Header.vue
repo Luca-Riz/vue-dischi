@@ -2,10 +2,9 @@
     <div class="headband mb-5">
         <img src="../assets/logo-spotify.png" alt="logo spotify">
 
-        <select @change="setGenre" v-model="selectedGenre" name="" id="">
-            <option selected value="all">All</option>
+        <select @change="setGenre" v-model="selectedGenre">
+            <option value="all" selected="selected">All</option>
             <option v-for="( genre, index ) in arrayGenres" :key="index" :value="genre">{{genre}}</option>
-
         </select>    
     
     </div>  
@@ -47,9 +46,17 @@ export default {
     .headband { 
         height: 80px;
         background-color: #2e3a46;
+        position: relative;
         
         img{
             height: 100%;
+        };
+
+        select {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translate(0, -50%);
         }
     }
 
