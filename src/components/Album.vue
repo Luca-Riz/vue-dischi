@@ -18,7 +18,6 @@
 
 <script>
 
-
 export default {
     name: 'Album', //non indispensabile ma best practice
     data() {

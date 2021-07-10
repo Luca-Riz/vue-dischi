@@ -6,9 +6,7 @@
             <option selected value="all">All</option>
             <option v-for="( genre, index ) in arrayGenres" :key="index" :value="genre">{{genre}}</option>
 
-        </select>
-        
-
+        </select>    
     
     </div>  
 </template>
@@ -41,8 +39,6 @@ export default {
         }
     },
 };
-
-
 
 </script>
 
