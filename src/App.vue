@@ -37,6 +37,11 @@ export default {
               .get(this.apiURL)
               .then(res => {
                   let data = res.data.response;
+                  //sort ordina da a (piccolo) a b (grande) .year per mettere in ordine solo l'anno
+                  data.sort(function(a, b) {
+                    return a.year - b.year
+                  });
+
                   this.albumList = data;
                   // console.log(data);
                   data.forEach(
@@ -45,16 +50,18 @@ export default {
                         this.arrayGenres.push(element.genre);
                       }                      
                   });
-                  // console.log(this.arrayGenres);
-                  // this.loading = false;
+
                   })
       },
       displayGenre(genreSel){
         // console.log(genreSel);
         axios
             .get(this.apiURL)
-            .then(res => {
+            .then(res => {              
               let risposta = res.data.response;
+              risposta.sort(function(a, b) {
+                    return a.year - b.year
+                  });
               // console.log(risposta, genreSel);
               if (genreSel === "all"){
                 this.albumList = risposta;
