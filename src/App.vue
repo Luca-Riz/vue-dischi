@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :arrayGenres="arrayGenres"/>
+    <Header :arrayGenres="arrayGenres" @getGenre="displayGenre" />
 
     <div class="container">
       <Album :arrayAlbum="albumList" />
@@ -48,6 +48,24 @@ export default {
                   // console.log(this.arrayGenres);
                   // this.loading = false;
                   })
+      },
+      displayGenre(genreSel){
+        // console.log(genreSel);
+        axios
+            .get(this.apiURL)
+            .then(res => {
+              let risposta = res.data.response;
+              // console.log(risposta, genreSel);
+              if (genreSel === "all"){
+                this.albumList = risposta;
+              } else {
+                this.albumList = risposta.filter(
+                  (element) => {
+                    return element.genre == genreSel;
+                  }
+                );
+              }
+            })
       }
   }
 }

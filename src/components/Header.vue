@@ -2,9 +2,9 @@
     <div class="headband mb-5">
         <img src="../assets/logo-spotify.png" alt="logo spotify">
 
-        <select name="" id="">
-            <option value="all">All</option>
-            <option v-for="( genre, index ) in arrayGenres" :key="index" value="genre">{{genre}}</option>
+        <select @change="setGenre" v-model="selectedGenre" name="" id="">
+            <option selected value="all">All</option>
+            <option v-for="( genre, index ) in arrayGenres" :key="index" :value="genre">{{genre}}</option>
 
         </select>
         
@@ -20,10 +20,24 @@ export default {
     components: {
         
     },
+
+    data() {
+        return {
+            selectedGenre: ''
+        }
+    },
+
     props: {
         arrayGenres: {
             type: Array,
             required: true
+        }
+    },
+
+    methods: {
+        setGenre: function(){
+            // console.log(this.selectedGenre);
+            this.$emit('getGenre', this.selectedGenre);
         }
     },
 };
